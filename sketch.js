@@ -1,26 +1,29 @@
-Let dogs = ["dudu", "bobby", "milky", "olivia", "jackey", "tutu"];
+Let dogs = [{
+  name: "dudu",
+  color: "chocolate"
+}, {
+  name: "bobby",
+  color: "white"
+}, {
+  name: "milky",
+  color: "mix"
+}, {
+  name: "olivia",
+  color: "brown"
+}, {
+  name: "jackey",
+  color: "gold"
+}, {
+  name: "tutu",
+  color: "wave"
+}];
 
+let randomIndex;
 
 function setup() {
   createCanvas(600, 600);
   background(200);
-
- console.log("initial array is ")
- console.log(dogs);
-
- dogs.pop();
-  console.log("array after pop ")
- console.log(dogs);
-
- dogs.push("aya");
- console.log("array after push ")
-console.log(dogs);
-
-
 }
-
-
-
 
 
 function draw() {
@@ -28,3 +31,9 @@ function draw() {
 
 
 }
+
+function mousePressed() {
+  background(random(200,255));
+  randomIndex = int(random(dogs.length));
+  text(dogs{randomIndex}.name, 50, 50);
+  dogs.splice(ramdomIndex, 1);
