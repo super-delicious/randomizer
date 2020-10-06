@@ -44,7 +44,7 @@ function setup() {
   textSize(32);
   textFont('Courier New, Courier, monospace');
   textAlign(CENTER);
-  fill(0,0,5);
+  fill(0, 0, 5);
   imgaeMode(CENTER);
   frameRate(8);
 
@@ -91,11 +91,11 @@ function randomizer() {
   animating = false;
 
   if (dogs[0]) {
-  //  background(random(110), random(25), random(55));
-  clear();
+    //  background(random(110), random(25), random(55));
+    clear();
     randomIndex = int(random(dogs.length));
     image(random(trolls), width / 2, height / 2);
-    text(dogs[randomIndex].name, width/2, heright/2);
+    text(dogs[randomIndex].name, width / 2, heright / 2);
     dogs.splice(randomIndex, 2);
   } else {
     background(random(200, 255));
