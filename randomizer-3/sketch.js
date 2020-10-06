@@ -28,7 +28,7 @@ let cnv;
 function preload() {
 
   for (let i = 0; i <= 7; i++) {
-    bgs[i] = loadImage(`assets/troll_${i}.jpg`)
+    bgs[i] = loadImage(`assets/troll_${i}.JPG`)
   }
 
 
@@ -44,7 +44,6 @@ function setup() {
   textSize(32);
   textFont('Courier New, Courier, monospace');
   textAlign(CENTER);
-  textStyle(BOLD 500);
   fill(0,0,5);
   imgaeMode(CENTER);
   frameRate(8);
