@@ -23,6 +23,7 @@ let animating = false;
 let trollss = [];
 let imageCounter = 0;
 let button;
+let cnv;
 
 function preload() {
 
@@ -37,7 +38,8 @@ function preload() {
 
 
 function setup() {
-  createCanvas(600, 600);
+  cnv = createCanvas(600, 600);
+  cnv.parent("#canvasDiv");
   background(227, 253, 250);
   textSize(32);
   textFont('Courier New, Courier, monospace');
