@@ -28,7 +28,7 @@ let cnv;
 function preload() {
 
   for (let i = 0; i <= 7; i++) {
-    bgs[i] = loadImage(`assets/troll_${i}.JPG`)
+    bgs[i] = loadImage(`assets/troll_${i}.jpg`)
   }
 
 
