@@ -46,7 +46,7 @@ function setup() {
   fill(0, 0, 5);
   imageMode(CENTER);
   frameRate(8);
-  text("start", 50, 50);
+  text("start", width/2, height/2);
 
   //button = createButton("stat");
   button = select('#randButton');
@@ -96,8 +96,7 @@ function randomizer() {
     text(dogs[randomIndex].name, width / 2, height / 2);
     dogs.splice(randomIndex, 2);
   } else {
-    background(random(200, 255));
-    text("ends", 50, 50);
+    text("ends",width/2, height/2);
   }
 
 
@@ -106,5 +105,5 @@ function randomizer() {
 
 function buttonPressed() {
   animating = true;
-  setTimeout(randomizer, 3000);
+  setTimeout(randomizer, 2000);
 }
