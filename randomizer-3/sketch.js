@@ -31,7 +31,7 @@ function preload() {
 
   for (let i = 0; i < 7; i++) {
     trolls[i] = loadImage(`assets/troll_${i}.JPG`)
-    console.log(trolls);
+    //console.log(trolls);
   }
 }
 
