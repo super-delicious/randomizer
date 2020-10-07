@@ -1,43 +1,42 @@
+'use strict';
 let dogs = [{
-  name: "dudu",
+  name: "Be honest rather clever.",
   color: "chocolate"
 }, {
-  name: "bobby",
+  name: "Let bygones be bygones.",
   color: "white"
 }, {
-  name: "milky",
+  name: "Nothing is impossible to a willing heart.",
   color: "mix"
 }, {
-  name: "olivia",
+  name: "Living without an aim is like sailing without a compass",
   color: "brown"
 }, {
-  name: "jackey",
+  name: "Take control of your own desting.",
   color: "gold"
 }, {
-  name: "tutu",
+  name: "Live well, love lots, and laugh often.",
   color: "wave"
 }]
 
+
 let randomIndex;
 let animating = false;
-let trollss = [];
+let trolls = [];
 let imageCounter = 0;
 let button;
 let cnv;
 
 function preload() {
 
-  for (let i = 0; i <= 7; i++) {
-    bgs[i] = loadImage(`assets/troll_${i}.JPG`)
+  for (let i = 0; i < 7; i++) {
+    trolls[i] = loadImage(`assets/troll_${i}.JPG`)
+    console.log(trolls);
   }
-
-
 }
 
-
-
-
 function setup() {
+  console.log(trolls);
   cnv = createCanvas(600, 600);
   cnv.parent("#canvasDiv");
   background(227, 253, 250);
@@ -45,9 +44,8 @@ function setup() {
   textFont('Courier New, Courier, monospace');
   textAlign(CENTER);
   fill(0, 0, 5);
-  imgaeMode(CENTER);
+  imageMode(CENTER);
   frameRate(8);
-
   text("start", 50, 50);
 
   //button = createButton("stat");
@@ -95,7 +93,7 @@ function randomizer() {
     clear();
     randomIndex = int(random(dogs.length));
     image(random(trolls), width / 2, height / 2);
-    text(dogs[randomIndex].name, width / 2, heright / 2);
+    text(dogs[randomIndex].name, width / 2, height / 2);
     dogs.splice(randomIndex, 2);
   } else {
     background(random(200, 255));
@@ -109,6 +107,4 @@ function randomizer() {
 function buttonPressed() {
   animating = true;
   setTimeout(randomizer, 3000);
-
-
 }
