@@ -92,7 +92,7 @@ function randomizer() {
     text(dogs[randomIndex], width / 2, height / 2);
     dogs.splice(randomIndex, 2);
   } else {
-    text("ends",width/2, height/2);
+  //  text("ends",width/2, height/2);
   }
 
 
