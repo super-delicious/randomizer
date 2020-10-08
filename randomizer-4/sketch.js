@@ -33,7 +33,7 @@ function setup() {
   fill(0, 0, 5);
   imageMode(CENTER);
   frameRate(8);
-  text("start", width/2, height/2);
+  //text("start", width/2, height/2);
 
   startButton = select('#randButton');
   startButton.mousePressed(buttonPressed);
