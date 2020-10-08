@@ -29,7 +29,7 @@ canvas {
   color: rgb(0,0,0);
 }
 
-.form{
+.column{
   text-align: left:
   display:block;
   margin: 0 25%;
@@ -38,7 +38,7 @@ canvas {
   background-color: rgb(46,12,157);
 }
 
-.ranButton {
+.randButton {
   background-color: #e6fffd;
   padding: 7px 15px;
   border-radius: 0.9;

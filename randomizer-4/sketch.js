@@ -1,31 +1,18 @@
 'use strict';
-let dogs = [{
-  name: "0",
-  color: "chocolate"
-}, {
-  name: "1",
-  color: "white"
-}, {
-  name: "2",
-  color: "mix"
-}, {
-  name: "3",
-  color: "brown"
-}, {
-  name: "4",
-  color: "gold"
-}, {
-  name: "5",
-  color: "wave"
-}]
+let dogs = [];
 
 
 let randomIndex;
 let animating = false;
 let trolls = [];
 let imageCounter = 0;
-let button;
+let startButton;
+let addMoreButton;
 let cnv;
+let nameInputs = [];
+let firstTime = true;
+
+
 
 function preload() {
 
@@ -48,13 +35,17 @@ function setup() {
   frameRate(8);
   text("start", width/2, height/2);
 
-  //button = createButton("stat");
-  button = select('#randButton');
-  button.mousePressed(buttonPressed);
-  button.class("ranButton");
-  console.log(trolls);
-  // setTimeout(changeBackground, 1000);
-  // setInterval(changeBackground, 1000);
+  startButton = select('#randButton');
+  startButton.mousePressed(buttonPressed);
+  //button.class("ranButton");
+  //console.log(trolls);
+
+  addMoreButton = select('#addMoreButton');
+  addMoreButton.mousePressed(addAnotherInput);
+
+  for (let i = 0; i < 3; i++) {
+
+}
 }
 
 
@@ -72,6 +63,11 @@ function draw() {
   }
 }
 
+function addAnotherInput(){
+  nameInputs.push(createInput());
+  nameInputs[nameInputs.length - 1].parent("#inputFields");
+
+}
 
 function changeBackground() {
   if (counter <= 5) {
@@ -93,7 +89,7 @@ function randomizer() {
     clear();
     randomIndex = int(random(dogs.length));
     image(random(trolls), width / 2, height / 2);
-    text(dogs[randomIndex].name, width / 2, height / 2);
+    text(dogs[randomIndex], width / 2, height / 2);
     dogs.splice(randomIndex, 2);
   } else {
     text("ends",width/2, height/2);
@@ -104,6 +100,14 @@ function randomizer() {
 }
 
 function buttonPressed() {
+
+  if (firstTime == true){
+    for (let i = 0; i < nameInputs.length; i++){
+      dogs.push(nameInputs[i].value());
+    }
+    firstTime = false;
+  }
+
   animating = true;
   setTimeout(randomizer, 2000);
 }
